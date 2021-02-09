@@ -8,24 +8,27 @@
 ## Installer Docker sur le serveur :
 
 - Se connecter en SSH au serveur sous ubuntu, puis tapez les commandes suivantes
-> sudo apt-get update
-> sudo apt-get install \
->  apt-transport-https \
-> ca-certificates \
-> curl \
-> gnupg-agent \
-> software-properties-common \
-> ufw
-> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-> sudo apt-key fingerprint 0EBFCD88
-> vsudo add-apt-repository \
-> "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-> $(lsb_release -cs) \
-> stable"
-> sudo apt-get update
-> sudo apt-get install docker-ce docker-ce-cli containerd.io
-> sudo usermod -aG docker $USER
-> newgrp docker
+
+```SH
+sudo apt-get update
+ sudo apt-get install \
+  apt-transport-https \
+ ca-certificates \
+ curl \
+ gnupg-agent \
+ software-properties-common \
+ ufw
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+ sudo apt-key fingerprint 0EBFCD88
+ vsudo add-apt-repository \
+ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+ $(lsb_release -cs) \
+ stable"
+ sudo apt-get update
+ sudo apt-get install docker-ce docker-ce-cli containerd.io
+ sudo usermod -aG docker $USER
+ newgrp docker
+ ```
 
 - Installation Caprover :
 sudo ufw allow 80,443,3000,996,7946,4789,2377/tcp; sudo ufw allow 7946,4789,2377/udp;
@@ -69,13 +72,13 @@ SERVER_PORT=5000
 DB_HOST=srv-captain--api-db
 DB_PORT=3306
 DB_USER=root
-DB_PASS=hypnose2021
+DB_PASS=[DB_PASS]
 DB_NAME=hypnoseetvins_database
 SESSION_COOKIE_NAME=hypnose_et_vins_session_id
-SESSION_COOKIE_SECRET=GqR56DS54221&#fs@%gyuyaz
+SESSION_COOKIE_SECRET=[SESSION_COOKIE_SECRET]
 CORS_ALLOWED_ORIGINS=https://front-office.hypnose-et-vins.duckdns.org,https://back-office.hypnose-et-vins.duckdns.org
-SENDINBLUE_API_KEY=// INDIQUER LA CLE D’API//
-MAIL_TO=// INDIQUER LA MAIL DESTINATAIRE DU FORMULAIRE DE CONTACT//
+SENDINBLUE_API_KEY=[SENDINBLUE_API_KEY]
+MAIL_TO=[MAIL_TO]
 CLIENT_URL=https://front-office.hypnose-et-vins.duckdns.org/
 NODE_ENV=production
 
