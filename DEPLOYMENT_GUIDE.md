@@ -39,7 +39,7 @@ docker run -p 80:80 -p 443:443 -p 3000:3000 -v /var/run/docker.sock:/var/run/doc
 - Mot de passe : captain42
 - Aller à "settings" -> change password (et changez le mot de passe)
 - Aller sur le dashboard, section "CapRover Root Domain Configurations", mettre [NOM DE DOMAINE] dans l'input et cliquer sur "update domain", se relogger et cliquer sur "enable https" puis "Force https".
-- Caprover est désormais accessible ici : https://captain.[NOM DE DOMAINE]
+- Caprover est désormais accessible ici : https://<span>captain.[NOM DE DOMAINE]</span>
 
 ## STEP 1 : créer la base de donnée
 
@@ -55,7 +55,7 @@ docker run -p 80:80 -p 443:443 -p 3000:3000 -v /var/run/docker.sock:/var/run/doc
 - app name : db-admin
 - Deploy
 - Caprover > Apps > db-admin > Enable HTTPS et cocher Force HTTPS by redirecting all HTTP traffic to HTTPS et "Save & Update"
-- Aller à https://db-admin.[NOM DOMAINE]/
+- Aller à https://<span>db-admin.[NOM DOMAINE]/</span>
 - Serveur : srv-captain--api-db
 - utilisateur : root
 - mot de passe :  [DB_PASS]
@@ -110,7 +110,7 @@ Si l'API doit servir des fichiers uploadés par les utilisateurs sur le système
 - Enable https, cocher "Force HTTPS by redirecting all HTTP traffic to HTTPS", cliquer sur "Save & Update"
 - Onglet App configs
 - Dans la section Persistent Directories, mettre à jour le label correspondant au "path in app" /srv. Remplacer "filebrowser-files" par "file-storage"
-- Se rendre sur https://filebrowser.[NOM DOMAINE]/
+- Se rendre sur https://<span>filebrowser.[NOM DOMAINE]/</span>
 - Se connecter avec les identifiant : admin / admin
 - Se rendre dans settings et changer le mot de passe puis cliquer sur le bouton "update"
 - Se rendre ensuite dans My Files
@@ -123,7 +123,7 @@ Si l'API doit servir des fichiers uploadés par les utilisateurs sur le système
 - aller sur l'app "front-office"
 - onglet http settings : cliquer sur "Enable HTTPS", dans l'input "Container HTTP Port" mettre 80, cocher "Force HTTPS by redirecting all HTTP traffic to HTTPS", cliquer sur "Save & Update"
 - onglet http settings : à coté du bouton "connect new domain", remplir l'input avec [NOM DE DOMAINE] et cliquer sur le bouton puis sur "enable HTTPS".
-- onglet App Configs, Environmental Variables: cocher "bulk edit" et copier : REACT_APP_API_BASE_URL=https://api.[NOM DE DOMAINE]
+- onglet App Configs, Environmental Variables: cocher "bulk edit" et copier : REACT_APP_API_BASE_URL=https://<span>api.[NOM DE DOMAINE]</span>
 - "Save & Update"
 - onglet "Deployement"
 - aller à la section Method 3: Deploy from Github/Bitbucket/Gitlab
@@ -143,7 +143,7 @@ Si l'API doit servir des fichiers uploadés par les utilisateurs sur le système
 - aller sur l'app "back-office"
 - onglet http settings : cliquer sur "Enable HTTPS", dans l'input "Container HTTP Port" mettre 80, cocher "Force HTTPS by redirecting all HTTP traffic to HTTPS", cliquer sur "Save & Update"
 - onglet http settings : à coté du bouton "connect new domain", remplir l'input avec [NOM DE DOMAINE] et cliquer sur le bouton puis sur "enable HTTPS".
-- onglet App Configs, Environmental Variables: cocher "bulk edit" et copier : REACT_APP_API_BASE_URL=https://api.[NOM DE DOMAINE]
+- onglet App Configs, Environmental Variables: cocher "bulk edit" et copier : REACT_APP_API_BASE_URL=https://<span>api.[NOM DE DOMAINE]</span>
 - "Save & Update"
 - onglet "Deployement"
 - aller à la section Method 3: Deploy from Github/Bitbucket/Gitlab
