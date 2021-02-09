@@ -67,7 +67,7 @@ docker run -p 80:80 -p 443:443 -p 3000:3000 -v /var/run/docker.sock:/var/run/doc
 - Caprover > Apps > entrer "api" dans l'input, cocher "Has persistant data" , cliquer sur le bouton "Create New App"
 - Caprover > Apps > api > Enable HTTPS et cocher Force HTTPS by redirecting all HTTP traffic to HTTPS, mettre 5000 dans le champs "Container HTTP Port" et cliquer sur "Save & Update"
 - onglet App Configs, Environmental Variables: cocher "bulk edit" et copier dans le champ :
-
+```SH
 SERVER_PORT=5000
 DB_HOST=srv-captain--api-db
 DB_PORT=3306
@@ -81,6 +81,7 @@ SENDINBLUE_API_KEY=[SENDINBLUE_API_KEY]
 MAIL_TO=[MAIL_TO]
 CLIENT_URL=https://front-office.hypnose-et-vins.duckdns.org/
 NODE_ENV=production
+```
 
 - Cliquer sur "Add Persistent directory" plus bas
 - Renseigner dans Path in App : /usr/src/app/file-storage
