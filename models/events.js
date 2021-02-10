@@ -127,10 +127,10 @@ const findOneEvent = async (id, failIfNotFound = true) => {
 // find all events in database
 const findAllEvents = async (req) => {
   let request =
-    "SELECT e.*, w.name, w.vigneron, w.producteur, w.image, u.firstname, u.lastname, u.photo_url, u.role, a.street, a.city, a.zipcode FROM event AS e JOIN address AS a ON e.address_id = a.id JOIN user AS u ON e.moderator_id = u.id JOIN wine AS w ON e.wine_id = w.id ORDER BY date";
+    "SELECT e.*, w.name, w.vigneron, w.producteur, w.image, u.firstname, u.lastname, u.photo_url, u.role, a.street, a.city, a.zipcode FROM event AS e JOIN address AS a ON e.address_id = a.id JOIN user AS u ON e.moderator_id = u.id JOIN wine AS w ON e.wine_id = w.id";
   if (req) {
     if (req.query.after && req.query.before) {
-      request += ` WHERE date BETWEEN '${req.query.after}' AND '${req.query.before}'`;
+      request += ` WHERE date BETWEEN '${req.query.after}' AND '${req.query.before}' ORDER BY date`;
     }
     if (req.query.sort) {
       const parsedSort = JSON.parse(req.query.sort);
